@@ -1,8 +1,5 @@
 import { Home } from "../home/home";
-import { Route, Router, Navigate } from "react-router-dom";
-
-
-const navigate = Navigate()
+import { Route, Routes } from "react-router-dom";
 
 export const Body = () => {
     return (
