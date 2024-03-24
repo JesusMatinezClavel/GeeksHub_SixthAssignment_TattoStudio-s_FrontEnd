@@ -1,0 +1,12 @@
+.registerDesign{
+    height: 75vh;
+    width: 100vw;
+
+    color: black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(126, 89, 41);
+}
