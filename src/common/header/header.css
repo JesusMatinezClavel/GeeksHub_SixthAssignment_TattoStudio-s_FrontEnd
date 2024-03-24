@@ -5,8 +5,12 @@
     color: black;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     background-color: rgb(8, 90, 110);
+}
+
+.headerRest {
+    display: flex;
 }
