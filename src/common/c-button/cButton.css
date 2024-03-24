@@ -1,0 +1,22 @@
+.buttonDesign{
+    height: 2em;
+    width: 6em;
+
+    background-color: rgb(26, 134, 98);
+    border:.1em solid black;
+
+    margin: .3em;
+
+
+    border-bottom-left-radius: .8em;
+    border-top-right-radius: .8em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover{
+        background-color: aquamarine;
+        cursor: pointer;
+    }
+}

@@ -2,8 +2,10 @@
     height: 2em;
     width: 18em;
 
-    margin: .2em;
+    margin: .3em;
+    border:.1em solid black;
 
-    border-top-left-radius: .8em;
-    border-bottom-right-radius: .8em;
+
+    border-bottom-left-radius: .8em;
+    border-top-right-radius: .8em;
 }

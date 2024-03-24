@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { CInput } from '../../common/c-input/cInput'
 import { Header } from '../../common/header/header'
 import './login.css'
+import { CButton } from "../../common/c-button/cButton";
 
 export const Login = () => {
 
@@ -12,11 +13,14 @@ export const Login = () => {
     })
 
     const inputHandler = (e) => {
-        console.log(e.target.name);
         setLoginData((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value,
         }))
+    }
+
+    const logMe = () => {
+        console.log("hola mundo")
     }
 
 
@@ -40,6 +44,7 @@ export const Login = () => {
                     placeholder={"input password"}
                     onChange={(e) => inputHandler(e)}
                 />
+                <CButton onClick={logMe} title={"Log Me!"} />
             </div>
         </>
     )
