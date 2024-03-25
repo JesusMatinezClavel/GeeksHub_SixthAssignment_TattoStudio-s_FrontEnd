@@ -1,6 +1,6 @@
 import './cInput.css'
 
-export const CInput = ({className,type,name,value, placeholder, onChange}) => {
+export const CInput = ({className,type,name,value, placeholder, onChange, onBlur}) => {
     return (
         <input
             className={className}
@@ -9,6 +9,7 @@ export const CInput = ({className,type,name,value, placeholder, onChange}) => {
             value={value}
             placeholder={placeholder}
             onChange={onChange}
+            onBlur={onBlur}
         />
     )
 }
