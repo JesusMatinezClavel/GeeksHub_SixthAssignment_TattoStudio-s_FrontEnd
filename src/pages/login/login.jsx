@@ -9,11 +9,15 @@ import { CInput } from '../../common/c-input/cInput'
 import { Header } from '../../common/header/header'
 import { CButton } from "../../common/c-button/cButton";
 
+
 export const Login = () => {
 
+    const userData = JSON.parse(localStorage.getItem("passport"))
     const navigate = useNavigate()
 
     // Login Hooks
+
+    const [storagedToken, setStoragedToken] = useState(userData?.userToken)
 
     const [loginCredentials, setLoginCredentials] = useState({
         email: "",
@@ -28,6 +32,10 @@ export const Login = () => {
     const [loginMsg, setloginMsg] = useState("")
 
     // Login functions
+
+    useEffect(() => { 
+        storagedToken ? navigate("/") :null
+    },[])
 
     const inputHandler = (e) => {
         setLoginCredentials((prevState) => ({
@@ -69,14 +77,9 @@ export const Login = () => {
                 userTokenData: decodedToken
             }
 
-            console.log(passport);
+            localStorage.setItem("passport", JSON.stringify(passport))
 
-            localStorage.setItem("passport",JSON.stringify(passport))
-
-            setloginMsg(fetched?.message || fetched)
-
-
-            fetched.succes ? setTimeout(() => { navigate("/") }, 1200) : null
+            fetched.success ? navigate("/") : setloginMsg(fetched.message)
 
         } catch (error) {
             setloginMsg(error.message);
