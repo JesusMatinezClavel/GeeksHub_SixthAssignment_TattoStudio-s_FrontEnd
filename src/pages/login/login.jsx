@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { decodeToken } from "react-jwt";
+import { validate } from "../../utils/utilityFunctions";
+import { logReq } from "../../services/apiCalls";
+
+import './login.css'
 import { CInput } from '../../common/c-input/cInput'
 import { Header } from '../../common/header/header'
-import './login.css'
 import { CButton } from "../../common/c-button/cButton";
-import { logReq } from "../../services/apiCalls";
-import { validate } from "../../utils/utilityFunctions";
 
 export const Login = () => {
 
     const navigate = useNavigate()
+
+    // Login Hooks
 
     const [loginCredentials, setLoginCredentials] = useState({
         email: "",
@@ -22,6 +26,8 @@ export const Login = () => {
     })
 
     const [loginMsg, setloginMsg] = useState("")
+
+    // Login functions
 
     const inputHandler = (e) => {
         setLoginCredentials((prevState) => ({
@@ -50,20 +56,34 @@ export const Login = () => {
         try {
             for (let element in loginCredentials) {
                 if (loginCredentials[element] === "") {
-                    throw new Error('fields must be completed')
+                    throw new Error('Fields must be completed')
                 }
             }
             const fetched = await logReq(loginCredentials)
+
+            const token = fetched.token
+            const decodedToken = decodeToken(token)
+
+            const passport = {
+                userToken: token,
+                userTokenData: decodedToken
+            }
+
+            console.log(passport);
+
+            localStorage.setItem("passport",JSON.stringify(passport))
+
             setloginMsg(fetched?.message || fetched)
-            console.log(fetched.success);
-            fetched.succes === true
-                ? setTimeout(() => { navigate("/") }, 1200)
-                : null
+
+
+            fetched.succes ? setTimeout(() => { navigate("/") }, 1200) : null
+
         } catch (error) {
             setloginMsg(error.message);
         }
     }
 
+    // Login return
 
     return (
         <>

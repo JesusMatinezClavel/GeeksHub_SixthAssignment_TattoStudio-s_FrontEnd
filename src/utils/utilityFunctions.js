@@ -1,11 +1,13 @@
 export const validate = (type, value) => {
   switch (type) {
     case "name":
+    case "firstName":
+    case "lastName":
     case "nombre":
     case "surname":
     case "cognom":
-      if (value.length < 3) {
-        return "Por favor, el nombre debe de tener mínimo tres caracteres.";
+      if (value.length < 2) {
+        return "Name has to be at least 2 characters long";
       }
 
       return "";
@@ -17,16 +19,15 @@ export const validate = (type, value) => {
       const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
       if (!emailRegex.test(value)) {
-        return "Por favor, el formato del email debe de ser correcto.";
+        return "Email format must be correct!";
       }
 
       return "";
 
     case "password":
     case "contraseña":
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,10}$/;
-      if (!passwordRegex.test(value)) {
-        return "El password debe tener entre 6 y 10 caracteres, simbolo y mayúscula";
+      if (value < 6 || value > 10) {
+        return "Password has to be between 6 and 10 characters long";
       }
 
       return "";

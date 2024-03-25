@@ -2,18 +2,18 @@
     height: 75vh;
     width: 100vw;
 
-    color: black;
+    color: rgb(255, 255, 255);
     
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 
-    background-color: rgb(114, 97, 76);
+    background-color: rgb(78, 78, 78);
 }
 
 .errorMsg {
     height: .5em;
     transform: translateY(-.5em);
-    color: rgb(172, 0, 0);
+    color: rgba(151, 0, 0, 0.527);
 }
