@@ -39,18 +39,26 @@ export const Login = () => {
         }))
     }
 
+    const emptyError = (e) => {
+        setLoginErrorMsg((prevState) => ({
+            ...prevState,
+            [e.target.name + "Error"]: ""
+        }))
+    }
+
     const logMeIn = async () => {
         try {
             for (let element in loginCredentials) {
-                if (loginCredentials[element] === ""){
+                if (loginCredentials[element] === "") {
                     throw new Error('fields must be completed')
                 }
             }
             const fetched = await logReq(loginCredentials)
-            setloginMsg(fetched.message)
-            setTimeout(() => {
-                navigate("/");
-            }, 1200);
+            setloginMsg(fetched?.message || fetched)
+            console.log(fetched.success);
+            fetched.succes === true
+                ? setTimeout(() => { navigate("/") }, 1200)
+                : null
         } catch (error) {
             setloginMsg(error.message);
         }
@@ -68,7 +76,8 @@ export const Login = () => {
                     value={loginCredentials.email || ""}
                     placeholder={"input email"}
                     onChange={(e) => inputHandler(e)}
-                    onBlur={checkError}
+                    onBlur={(e) => checkError(e)}
+                    onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{loginErrorMsg.emailError}</div>
                 <CInput
@@ -78,7 +87,8 @@ export const Login = () => {
                     value={loginCredentials.password || ""}
                     placeholder={"input password"}
                     onChange={(e) => inputHandler(e)}
-                    onBlur={checkError}
+                    onBlur={(e) => checkError(e)}
+                    onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{loginErrorMsg.passwordError}</div>
                 <CButton onClick={logMeIn} title={"Log Me!"} />
