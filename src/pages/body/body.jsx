@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Register } from "../register/register";
 import { Login } from "../login/login";
 import { Profile } from "../profile/profile";
+import { Services } from "../services/services";
 
 export const Body = () => {
     return (
@@ -11,6 +12,7 @@ export const Body = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/users/profile" element={<Profile />} />
+            <Route path="/services" element={<Services />} />
         </Routes>
     )
 }
