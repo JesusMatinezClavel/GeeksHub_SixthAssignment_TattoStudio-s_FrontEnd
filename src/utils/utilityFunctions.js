@@ -30,6 +30,7 @@ export const validate = (type, value) => {
       return "";
 
     case "password":
+    case "passwordHash":
     case "contraseña":
       if(value===""){
         return ""
