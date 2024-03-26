@@ -28,6 +28,7 @@ export const Header = () => {
                 ) : (
                     <div className="headerRest">
                         <Navigator title={"Profile"} destination="/users/profile" />
+                        <Navigator title={"Services"} destination="/services" />
                         <div onClick={logOut}>
                         <Navigator title={"LogOut"} destination="/"/>
                         </div>

@@ -64,7 +64,7 @@ export const Login = () => {
         try {
             for (let element in loginCredentials) {
                 if (loginCredentials[element] === "") {
-                    throw new Error('Fields must be completed')
+                    throw new Error('Every field must be completed')
                 }
             }
             const fetched = await logReq(loginCredentials)

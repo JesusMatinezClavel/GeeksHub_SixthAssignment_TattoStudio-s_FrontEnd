@@ -1,11 +1,13 @@
 .inputDesign {
-    height: 2em;
-    width: 18em;
+    height: 2.4em;
+    width: 19em;
+    margin: 1em;
 
-    margin: .75em;
-    border:.1em solid black;
+    background-color: rgb(58, 57, 57);
+    border: 1px solid rgb(59, 59, 59);
 
+    border-bottom-left-radius: 1em;
+    border-top-right-radius: 1em;
 
-    border-bottom-left-radius: .8em;
-    border-top-right-radius: .8em;
+    box-shadow: .5em 0.5em 1em .1em rgb(31, 31, 31);
 }
