@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { validate } from "../../utils/utilityFunctions";
+import { decodeToken } from "react-jwt";
+import { registerReq } from "../../services/apiCalls";
 
 import { Header } from '../../common/header/header'
 import { CInput } from "../../common/c-input/cInput";
@@ -43,7 +45,7 @@ export const Register = () => {
 
     const checkError = (e) => {
         const valid = validate(e.target.name, e.target.value)
-        
+
 
         setRegisterErrorMsg((prevState) => ({
             ...prevState,
@@ -58,26 +60,16 @@ export const Register = () => {
         }))
     }
 
-    const logMeIn = async () => {
+    const registerMe = async () => {
         try {
             for (let element in registerCredentials) {
                 if (registerCredentials[element] === "") {
-                    throw new Error('Fields must be completed')
+                    throw new Error('Every field must be completed')
                 }
             }
-            const fetched = await logReq(registerCredentials)
+            const fetched = await registerReq(registerCredentials)
 
-            const token = fetched.token
-            const decodedToken = decodeToken(token)
-
-            const passport = {
-                userToken: token,
-                userTokenData: decodedToken
-            }
-
-            localStorage.setItem("passport", JSON.stringify(passport))
-
-            fetched.success ? navigate("/") : setRegisterMsg(fetched.message)
+            fetched.success ? navigate("/login") : setRegisterMsg(fetched.message)
 
         } catch (error) {
             setRegisterMsg(error.message);
@@ -134,7 +126,7 @@ export const Register = () => {
                     onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{registerErrorMsg.passwordHashError}</div>
-                <CButton onClick={logMeIn} title={"Register"} />
+                <CButton onClick={registerMe} title={"Register"} />
                 <div className={`errorMsg`}>{registerMsg}</div>
             </div>
         </>

@@ -18,3 +18,21 @@ export const logReq = async (loginCredentials) => {
         return error.message
     }
 }
+
+export const registerReq = async (registerCredentials) => {
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registerCredentials)
+    }
+    try {
+        const response = await fetch(`${root}/auth/register`, options)
+        const data = await response.json()
+        
+        return data
+    } catch (error) {
+        return error.message
+    }
+}
