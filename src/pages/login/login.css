@@ -14,7 +14,7 @@
 
 .errorMsg {
     height: .5em;
-    line-height: .9em;
+    /* line-height: .9em; */
     transform: translateY(-.5em);
-    color: rgb(255, 72, 40);
+    color: rgb(0, 0, 0);
 }

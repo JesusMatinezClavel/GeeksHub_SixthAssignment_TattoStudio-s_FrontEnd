@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { CInput } from "../../common/c-input/cInput";
 import { useNavigate } from "react-router-dom";
+import { getOwnProfile, updateOwnProfile } from '../../services/apiCalls';
+import { validate } from '../../utils/utilityFunctions';
 
 import './profile.css'
 import { Header } from "../../common/header/header";
 import { CButton } from "../../common/c-button/cButton";
-import { getOwnProfile, updateOwnProfile } from '../../services/apiCalls';
-import { validate } from '../../utils/utilityFunctions';
 
 export const Profile = () => {
 
@@ -22,24 +22,28 @@ export const Profile = () => {
         firstName: "",
         lastName: "",
         email: "",
-        passwordHash: ""
+        passwordHash: "",
+        verifyPassword: ""
     })
     const [profileUpdate, setProfileUpdate] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        passwordHash: ""
+        passwordHash: "",
+        verifyPassword: ""
     })
     const [profileUpdateError, setProfileUpdateError] = useState({
         firstNameError: "",
         lastNameError: "",
         emailError: "",
-        passwordHashError: ""
+        passwordHashError: "",
+        verifyPasswordError: ""
     })
     const [updateMsg, setUpdateMsg] = useState("")
     const [storagedToken, setStoragedToken] = useState(tokenData?.userToken)
-    const [editable, setEditable] = useState("no")
-    const [validUpdate, setValidUpdate] = useState("no")
+    const [editable, setEditable] = useState(false)
+    const [updateError, setUpdateError] = useState(false)
+
     // Profile Functions
 
     useEffect(() => {
@@ -88,36 +92,55 @@ export const Profile = () => {
     }
 
     const editProfile = () => {
-        setValidUpdate("no")
-        setEditable("yes")
+        setEditable(true)
+        for (const element in profileUpdate) {
+            profileUpdate[element] = ""
+        }
     }
-
-    console.log(updateMsg);
 
     const saveProfile = async () => {
         try {
             const fetched = await updateOwnProfile(storagedToken, profileUpdate)
             const updateData = fetched.data
-            for (const element in profileUpdateError) {
-                profileUpdateError[element] !== ""
-                    ? setUpdateMsg(profileUpdateError[element])
-                    : setValidUpdate("yes")
+
+            let valid = ""
+
+            !updateData ? setUpdateMsg(fetched.message) : null
+            for (const element in profileUpdate) {
+                valid = validate(element, profileUpdate[element])
+                if (valid !== "") {
+                    setUpdateError(true)
+                    setUpdateMsg(valid)
+                    return valid
+                } else {
+                    setUpdateError(false)
+                }
             }
-            validUpdate === "yes"
+            if (profileUpdate.passwordHash !== profileUpdate.verifyPassword){
+                setUpdateError(true)
+                valid = "Both password have to match!"
+                return valid
+            }
+            !updateError
                 ? (
                     setProfileData({
                         firstName: updateData.firstName,
                         lastName: updateData.lastName,
                         email: updateData.email,
-                        passwordHash: updateData.passwordHash
-                    })
-                ) : null
+                        passwordHash: updateData.passwordHash,
+                        verifyPassword: updateData.verifyPassword
+                    }),
+                    // setValidUpdate("no"),
+                    setUpdateMsg("Profile updated!"),
+                    setTimeout(() => {
+                        setUpdateMsg("")
+                    }, 1200),
+                    setEditable(false)
+                )
+                : setUpdateMsg(valid)
         } catch (error) {
             console.log(error.message);
         }
-        validUpdate === "yes"
-            ? setEditable("no")
-            : null
     }
 
     // Profile Render
@@ -126,15 +149,13 @@ export const Profile = () => {
         <>
             <Header />
             <div className="profileDesign">
-                {editable === "no"
+                {editable === false
                     ? (
                         <div className="profileCard">
-                            <div className="profileImg"></div>
                             <div className="profileTextBox">
                                 <div className="profileText">{profileData.firstName}</div>
                                 <div className="profileText">{profileData.lastName}</div>
                                 <div className="profileText">{profileData.email}</div>
-                                <div className="profileText">{profileData.passwordHash}</div>
                             </div>
                         </div>
                     ) : (
@@ -146,7 +167,7 @@ export const Profile = () => {
                                     type={"text"}
                                     name={"firstName"}
                                     value={profileUpdate.firstName || ""}
-                                    placeholder={"input name"}
+                                    placeholder={profileData.firstName}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}
@@ -157,7 +178,7 @@ export const Profile = () => {
                                     type={"text"}
                                     name={"lastName"}
                                     value={profileUpdate.lastName || ""}
-                                    placeholder={"input lastName"}
+                                    placeholder={profileData.lastName}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}
@@ -168,7 +189,7 @@ export const Profile = () => {
                                     type={"email"}
                                     name={"email"}
                                     value={profileUpdate.email || ""}
-                                    placeholder={"input email"}
+                                    placeholder={profileData.email}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}
@@ -179,16 +200,27 @@ export const Profile = () => {
                                     type={"password"}
                                     name={"passwordHash"}
                                     value={profileUpdate.passwordHash || ""}
-                                    placeholder={"input password"}
+                                    placeholder={"input new password"}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}
                                 />
                                 {/* <div className={"errorMsg"}>{profileUpdateError.passwordHashError}</div> */}
+                                <CInput
+                                    className={"inputDesign"}
+                                    type={"password"}
+                                    name={"verifyPassword"}
+                                    value={profileUpdate.verifyPassword || ""}
+                                    placeholder={"repeat new password"}
+                                    onClick={(e) => emptyError(e)}
+                                    onChange={(e) => inputHandler(e)}
+                                    onBlur={(e) => checkError(e)}
+                                />
+                                {/* <div className={"errorMsg"}>{profileUpdate.verifyPassword}</div> */}
                             </div>
                         </div>
                     )}
-                <CButton onClick={editable === "no" ? editProfile : saveProfile} title={editable === "no" ? "Edit profile" : "Save changes"} />
+                <CButton className={updateError === false ? "buttonDesign" : "updateError"} onClick={editable === false ? editProfile : saveProfile} title={editable === false ? "Edit profile" : "Save changes"} />
                 <div className="errorMsg">{updateMsg}</div>
             </div>
         </>
