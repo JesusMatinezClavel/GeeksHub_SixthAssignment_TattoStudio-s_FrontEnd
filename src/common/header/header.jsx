@@ -7,7 +7,7 @@ import { Navigator } from "../navigator/navigator";
 export const Header = () => {
 
     const navigate = useNavigate()
-    const passport = JSON.parse(localStorage.getItem("passport"))
+    const tokenData = JSON.parse(localStorage.getItem("passport"))
 
     const logOut = () => {
         localStorage.removeItem("passport")
@@ -19,9 +19,10 @@ export const Header = () => {
             <div className="headerHome">
                 <Navigator title={"Home"} destination="/" />
             </div>
-            {!passport?.userToken
+            {!tokenData?.userToken
                 ? (
                     <div className="headerRest">
+                        <Navigator title={"Services"} destination="/services" />
                         <Navigator title={"Register"} destination="/register" />
                         <Navigator title={"Login"} destination="/login" />
                     </div>

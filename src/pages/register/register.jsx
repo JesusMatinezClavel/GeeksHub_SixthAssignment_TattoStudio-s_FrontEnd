@@ -11,12 +11,12 @@ import './register.css'
 
 
 export const Register = () => {
-    const userData = JSON.parse(localStorage.getItem("passport"))
+    const tokenData = JSON.parse(localStorage.getItem("passport"))
     const navigate = useNavigate()
 
     // Register Hooks
 
-    const [storagedToken, setStoragedToken] = useState(userData?.userToken)
+    const [storagedToken, setStoragedToken] = useState(tokenData?.userToken)
 
     const [registerCredentials, setRegisterCredentials] = useState({
         firstName: "",
@@ -34,7 +34,7 @@ export const Register = () => {
 
     const [registerMsg, setRegisterMsg] = useState("")
 
-    // Register functions
+    // Register Functions
 
     const inputHandler = (e) => {
         setRegisterCredentials((prevState) => ({
@@ -76,7 +76,7 @@ export const Register = () => {
         }
     }
 
-    // Register return
+    // Register Render
 
     return (
         <>
