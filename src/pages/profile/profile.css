@@ -18,12 +18,14 @@
 
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 
   background-color:  rgb(26, 134, 98);
 
   border-bottom-left-radius: 2em;
   border-top-right-radius: 2em;
+
+  box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
 }
 
 .profileText{

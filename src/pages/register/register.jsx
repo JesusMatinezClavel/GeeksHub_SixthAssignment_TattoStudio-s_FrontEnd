@@ -126,7 +126,7 @@ export const Register = () => {
                     onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{registerErrorMsg.passwordHashError}</div>
-                <CButton onClick={registerMe} title={"Register"} />
+                <CButton className={"buttonDesign"} onClick={registerMe} title={"Register"} />
                 <div className={`errorMsg`}>{registerMsg}</div>
             </div>
         </>

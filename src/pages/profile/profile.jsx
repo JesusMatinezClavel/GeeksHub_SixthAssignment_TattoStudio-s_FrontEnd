@@ -107,36 +107,36 @@ export const Profile = () => {
             let valid = ""
 
             !updateData ? setUpdateMsg(fetched.message) : null
+
             for (const element in profileUpdate) {
                 valid = validate(element, profileUpdate[element])
                 if (valid !== "") {
                     setUpdateError(true)
                     setUpdateMsg(valid)
                     return valid
-                } else {
-                    setUpdateError(false)
-                }
+                } 
             }
             if (profileUpdate.passwordHash !== profileUpdate.verifyPassword) {
                 setUpdateError(true)
                 valid = "Both password have to match!"
                 return valid
             }
+            setUpdateError(false)
             !updateError
                 ? (
+                    console.log("joder"),
+                    setUpdateMsg("Profile updated!"),
+                    setTimeout(() => {
+                        setUpdateMsg("")
+                    }, 1200),
+                    setEditable(false),
                     setProfileData({
                         firstName: updateData.firstName,
                         lastName: updateData.lastName,
                         email: updateData.email,
                         passwordHash: updateData.passwordHash,
                         verifyPassword: updateData.verifyPassword
-                    }),
-                    // setValidUpdate("no"),
-                    setUpdateMsg("Profile updated!"),
-                    setTimeout(() => {
-                        setUpdateMsg("")
-                    }, 1200),
-                    setEditable(false)
+                    })
                 )
                 : setUpdateMsg(valid)
         } catch (error) {
@@ -167,7 +167,7 @@ export const Profile = () => {
                                     type={"text"}
                                     name={"firstName"}
                                     value={profileUpdate.firstName || ""}
-                                    placeholder={profileData.firstName}
+                                    placeholder={"Input new first name"}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}
@@ -178,7 +178,7 @@ export const Profile = () => {
                                     type={"text"}
                                     name={"lastName"}
                                     value={profileUpdate.lastName || ""}
-                                    placeholder={profileData.lastName}
+                                    placeholder={"Input new last name"}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}
@@ -189,7 +189,7 @@ export const Profile = () => {
                                     type={"email"}
                                     name={"email"}
                                     value={profileUpdate.email || ""}
-                                    placeholder={profileData.email}
+                                    placeholder={"Input new email"}
                                     onClick={(e) => emptyError(e)}
                                     onChange={(e) => inputHandler(e)}
                                     onBlur={(e) => checkError(e)}

@@ -28,8 +28,8 @@ export const Header = () => {
                     </div>
                 ) : (
                     <div className="headerRest">
-                        <Navigator title={"Profile"} destination="/users/profile" />
                         <Navigator title={"Services"} destination="/services" />
+                        <Navigator title={"Profile"} destination="/users/profile" />
                         <div onClick={logOut}>
                         <Navigator title={"LogOut"} destination="/"/>
                         </div>

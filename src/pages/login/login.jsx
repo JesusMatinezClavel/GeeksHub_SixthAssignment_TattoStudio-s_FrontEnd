@@ -111,7 +111,7 @@ export const Login = () => {
                     onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{loginErrorMsg.passwordError}</div>
-                <CButton onClick={logMeIn} title={"Log Me!"} />
+                <CButton className={"buttonDesign"} onClick={logMeIn} title={"Log Me!"} />
                 <div className={`errorMsg`}>{loginMsg}</div>
             </div>
         </>
