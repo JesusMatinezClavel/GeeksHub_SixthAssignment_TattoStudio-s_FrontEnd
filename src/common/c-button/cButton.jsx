@@ -1,7 +1,7 @@
 import './cButton.css'
 
-export const CButton = ({ title, onClick }) => {
+export const CButton = ({ className,title, onClick }) => {
     return (
-        <div className="buttonDesign" onClick={onClick}>{title}</div>
+        <div className={"buttonDesign"||className} onClick={onClick}>{title}</div>
     )
 }

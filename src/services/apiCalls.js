@@ -59,7 +59,7 @@ export const updateOwnProfile = async (token, profileUpdate) => {
     const options = {
         method: "PUT",
         headers: {
-            "Content-Type": "application-json",
+            "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(profileUpdate)
