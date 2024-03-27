@@ -7,6 +7,7 @@ import { validate } from '../../utils/utilityFunctions';
 import './profile.css'
 import { Header } from "../../common/header/header";
 import { CButton } from "../../common/c-button/cButton";
+import { CCard } from '../../common/c-card/cCard';
 
 export const Profile = () => {
 
@@ -116,7 +117,7 @@ export const Profile = () => {
                     setUpdateError(false)
                 }
             }
-            if (profileUpdate.passwordHash !== profileUpdate.verifyPassword){
+            if (profileUpdate.passwordHash !== profileUpdate.verifyPassword) {
                 setUpdateError(true)
                 valid = "Both password have to match!"
                 return valid
@@ -151,16 +152,15 @@ export const Profile = () => {
             <div className="profileDesign">
                 {editable === false
                     ? (
-                        <div className="profileCard">
+                        <CCard className="cardDesign">
                             <div className="profileTextBox">
                                 <div className="profileText">{profileData.firstName}</div>
                                 <div className="profileText">{profileData.lastName}</div>
                                 <div className="profileText">{profileData.email}</div>
                             </div>
-                        </div>
+                        </CCard>
                     ) : (
-                        <div className="profileCard">
-                            <div className="profileImg"></div>
+                        <CCard className="cardUpdate">
                             <div className="profileTextBox">
                                 <CInput
                                     className={"inputDesign"}
@@ -218,11 +218,11 @@ export const Profile = () => {
                                 />
                                 {/* <div className={"errorMsg"}>{profileUpdate.verifyPassword}</div> */}
                             </div>
-                        </div>
+                        </CCard>
                     )}
                 <CButton className={updateError === false ? "buttonDesign" : "updateError"} onClick={editable === false ? editProfile : saveProfile} title={editable === false ? "Edit profile" : "Save changes"} />
                 <div className="errorMsg">{updateMsg}</div>
-            </div>
+            </div >
         </>
     )
 }
