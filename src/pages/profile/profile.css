@@ -12,38 +12,28 @@
     background-color: rgb(156, 156, 156);
 }
 
-.profileCard {
-    height: 15em;
-    width: 32em;
+.cardUpdate {
+  height: 18em;
+  width: 20em;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: aquamarine;
+  background-color:  rgb(26, 134, 98);
 
-    border-bottom-left-radius: 2em;
-    border-top-right-radius: 2em;
-}
+  border-bottom-left-radius: 2em;
+  border-top-right-radius: 2em;
 
-.profileImg {
-    height: 12em;
-    width: 10em;
-    margin: 1em;
-
-
-    background-color: rgb(114, 114, 96);
-
-    border-bottom-left-radius: 2em;
-    border-top-right-radius: 2em;
-
-    box-shadow: .4em 0.5em 1em .1em rgb(31, 31, 31);
+  box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
 }
 
 .profileText{
     height: 2em;
     width: 16em;
     margin: 1em;
+    /* margin-bottom: 2.4em;
+    margin-top: 2.4em; */
 
     background-color: rgb(68, 68, 68);
 
@@ -51,8 +41,35 @@
     border-top-right-radius: .8em;
 
     box-shadow: .5em 0.5em 1em .1em rgb(31, 31, 31);
-}
+
+  }
   
   .profileTextBox .inputDesign {
     display: block;
+  }
+
+  .updateError{
+    height: 2em;
+    width: 7em;
+
+    background-color: rgb(134, 26, 49);
+    border:.1em solid black;
+
+    margin: .5em;
+
+
+    border-bottom-left-radius: .8em;
+    border-top-right-radius: .8em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
+
+
+    &:hover{
+        background-color: aquamarine;
+        cursor: pointer;
+    }
   }

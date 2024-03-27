@@ -12,30 +12,27 @@ import { CButton } from "../../common/c-button/cButton";
 
 export const Login = () => {
 
-    const userData = JSON.parse(localStorage.getItem("passport"))
+    const tokenData = JSON.parse(localStorage.getItem("passport"))
     const navigate = useNavigate()
 
     // Login Hooks
 
-    const [storagedToken, setStoragedToken] = useState(userData?.userToken)
-
+    const [storagedToken, setStoragedToken] = useState(tokenData?.userToken)
     const [loginCredentials, setLoginCredentials] = useState({
         email: "",
         password: ""
     })
-
     const [loginErrorMsg, setLoginErrorMsg] = useState({
         emailError: "",
         passwordError: ""
     })
-
     const [loginMsg, setloginMsg] = useState("")
 
-    // Login functions
+    // Login Functions
 
     useEffect(() => { 
         storagedToken ? navigate("/") :null
-    },[])
+    },[storagedToken])
 
     const inputHandler = (e) => {
         setLoginCredentials((prevState) => ({
@@ -86,7 +83,7 @@ export const Login = () => {
         }
     }
 
-    // Login return
+    // Login Render
 
     return (
         <>
@@ -114,7 +111,7 @@ export const Login = () => {
                     onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{loginErrorMsg.passwordError}</div>
-                <CButton onClick={logMeIn} title={"Log Me!"} />
+                <CButton className={"buttonDesign"} onClick={logMeIn} title={"Log Me!"} />
                 <div className={`errorMsg`}>{loginMsg}</div>
             </div>
         </>

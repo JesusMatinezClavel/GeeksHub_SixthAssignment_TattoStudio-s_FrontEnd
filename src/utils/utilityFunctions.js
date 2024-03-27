@@ -6,6 +6,12 @@ export const validate = (type, value) => {
     case "nombre":
     case "surname":
     case "cognom":
+    case "nameError":
+    case "firstNameError":
+    case "lastNameError":
+    case "nombreError":
+    case "surnameError":
+    case "cognomError":
       if(value===""){
         return ""
       }
@@ -19,6 +25,10 @@ export const validate = (type, value) => {
     case "e-mail":
     case "correo":
     case "mail":
+    case "emailError":
+    case "e-mailError":
+    case "correoError":
+    case "mailError":
       if(value===""){
         return ""
       }
@@ -30,8 +40,13 @@ export const validate = (type, value) => {
       return "";
 
     case "password":
+    case "verifyPassword":
     case "passwordHash":
     case "contraseña":
+    case "passwordError":
+    case "verifyPasswordError":
+    case "passwordHashError":
+    case "contraseñaError":
       if(value===""){
         return ""
       }
