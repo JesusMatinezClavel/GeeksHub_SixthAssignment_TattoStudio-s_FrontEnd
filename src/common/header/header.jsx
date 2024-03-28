@@ -30,6 +30,7 @@ export const Header = () => {
                     <div className="headerRest">
                         <Navigator title={"Services"} destination="/services" />
                         <Navigator title={"Profile"} destination="/users/profile" />
+                        <Navigator title={"Appointments"} destination="/appointments" />
                         <div onClick={logOut}>
                         <Navigator title={"LogOut"} destination="/"/>
                         </div>

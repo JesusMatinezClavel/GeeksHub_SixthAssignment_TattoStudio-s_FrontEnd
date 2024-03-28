@@ -5,8 +5,9 @@
     color: black;
     
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 
     background-color: rgb(131, 122, 112);

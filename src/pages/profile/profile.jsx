@@ -8,6 +8,7 @@ import './profile.css'
 import { Header } from "../../common/header/header";
 import { CButton } from "../../common/c-button/cButton";
 import { CCard } from '../../common/c-card/cCard';
+import { CText } from "../../common/c-text/cText";
 
 export const Profile = () => {
 
@@ -154,9 +155,9 @@ export const Profile = () => {
                     ? (
                         <CCard className="cardDesign">
                             <div className="profileTextBox">
-                                <div className="profileText">{profileData.firstName}</div>
-                                <div className="profileText">{profileData.lastName}</div>
-                                <div className="profileText">{profileData.email}</div>
+                                <CText className={"textDesign"}>{profileData.firstName}</CText>
+                                <CText className={"textDesign"}>{profileData.lastName}</CText>
+                                <CText className={"textDesign"}>{profileData.email}</CText>
                             </div>
                         </CCard>
                     ) : (

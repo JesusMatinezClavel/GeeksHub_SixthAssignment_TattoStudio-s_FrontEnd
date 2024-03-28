@@ -77,3 +77,39 @@ export const updateOwnProfile = async (token, profileUpdate) => {
         return error
     }
 }
+
+export const getAllServices = async () => {
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "Application/json"
+        }
+    }
+    try {
+        const response = await fetch(`${root}/services`)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error.message
+    }
+}
+
+
+export const getOwnAppointments = async (token) => { 
+    const options={
+        method:"GET",
+        headers:{
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    try {
+        const response = await fetch(`${root}/appointments`,options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return data.error
+    }
+}

@@ -1,11 +1,14 @@
 .buttonDesign{
-    height: 2em;
-    width: 7em;
+    height: auto;
+    width: auto;
 
     background-color: rgb(26, 134, 98);
     border:.1em solid black;
 
     margin: .5em;
+    padding: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
 
 
     border-bottom-left-radius: .8em;
