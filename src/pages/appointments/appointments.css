@@ -1,13 +1,13 @@
-.registerDesign{
+.appointmentsDesign{
     height: 75vh;
     width: 100vw;
 
-    color: rgb(255, 255, 255);
+    color: black;
     
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 
-    background-color: rgb(126, 89, 41);
+    background-color: rgb(173, 163, 161);
 }
