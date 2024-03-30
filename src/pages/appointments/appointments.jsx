@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import dayjs from "dayjs";
 
 import './appointments.css'
 import { Header } from "../../common/header/header";
@@ -28,24 +29,36 @@ export const Appointments = () => {
         getAppointments()
     }, [])
 
+    console.log(appointments);
+
 
 
     return (
         <>
             <Header />
-            <div className="appointmentsDesign">
-                <CButton title={"new Appointment"} />
-                {appointments.map((appointments, index) => (
-                    <CText key={index} className={"textDesignAppointments"}>
-                        <div className="AppointmentsText">
-                            <div className="appointmentDate">{appointments.appointmentDate}</div>
-                            <div className="service">{appointments.service.serviceName}</div>
-                        </div>
-                        <CButton title={"Change appointment"} />
-                    </CText>
+            {appointments.length < 3
+                ? (
+                    <div className="appointmentsDesignEmpty">
+                        <CButton title={"new Appointment"} />
+                    </div>
+                )
+                : (
+                    <div className="appointmentsDesign">
+                        <CButton title={"new Appointment"} />
+                        {appointments.map((appointments, index) => (
+                            <CText key={index} className={"textDesignAppointments"}>
+                                <div className="AppointmentsText">
+                                    <div className="appointmentDate">{dayjs(appointments.appointmentDate, "YYYY-MM-DD").format("MMM-DD-YYYY HHmm")}</div>
+                                    <div className="service">{appointments.service.serviceName}</div>
+                                </div>
+                                <CButton title={"Change appointment"} />
+                            </CText>
 
-                ))}
-            </div>
+                        ))}
+                    </div>
+                )
+            }
+
         </>
     )
 }

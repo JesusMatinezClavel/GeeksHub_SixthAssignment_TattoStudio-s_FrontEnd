@@ -1,5 +1,5 @@
 .appointmentsDesign{
-    height: 75vh;
+    height: 75%;
     width: 100vw;
 
     color: black;
@@ -12,6 +12,10 @@
     background-color: rgb(173, 163, 161);
 }
 
+.appointmentsDesignEmpty{
+    height: 75vh;
+}
+
 .AppointmentsText{
 
     padding: 1em;
@@ -20,5 +24,4 @@
     border-top-right-radius: .8em;
 
     background-color: rgba(100, 99, 99, 0.226);
-    text-align: left;
 }

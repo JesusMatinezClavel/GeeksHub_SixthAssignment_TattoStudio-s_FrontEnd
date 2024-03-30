@@ -11,7 +11,7 @@ export const Header = () => {
 
     const logOut = () => {
         localStorage.removeItem("passport")
-        navigate("/login")
+        navigate("/")
     }
 
     return (

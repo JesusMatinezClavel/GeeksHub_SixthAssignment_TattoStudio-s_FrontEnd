@@ -13,19 +13,30 @@
 }
 
 .serviceImg {
-    height:95%;
-    width: 18em;
+    height:25em;
+    width: 25em;
     background-color: aliceblue;
+
+    border-radius: 50%;
+    border: .1em white solid;
+
+    box-shadow: 0em 0em 3em 3px white;
+    background-color: rgb(48, 48, 48);
+}
+
+.serviceName{
+    margin-bottom: 5em;
+    font-weight: 600;
 }
 
 .servicesText{
 
-    width: 50vw;
+    width: 50%;
     margin: 1em;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .buttonEmpty{
@@ -49,4 +60,19 @@
     align-items: center;
 
     box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
+}
+
+.serviceButton{
+    width: 33%;
+}
+
+.newAppointmentShow{
+    
+    height: auto;
+    width: auto;
+
+}
+
+.newAppointmentHide{
+    display: none;
 }

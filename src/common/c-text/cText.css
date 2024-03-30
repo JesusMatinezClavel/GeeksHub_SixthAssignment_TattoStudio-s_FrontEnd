@@ -22,7 +22,7 @@
 
 .textDesignServices {
     margin: 0;
-    height: 20vh;
+    height: 50vh;
     width: 100vw;
     border-radius: 0em;
 
@@ -30,9 +30,13 @@
     border-top: 1px solid black;
 
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     box-shadow: 0 0 0 0;
+}
+
+.reverse{
+    flex-direction: row-reverse;
 }
 
 .textDesignAppointments {
