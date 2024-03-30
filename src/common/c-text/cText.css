@@ -1,4 +1,4 @@
-.textDesign{
+.textDesign {
     height: auto;
     width: 16em;
     margin: 1em;
@@ -18,4 +18,41 @@
     border-top-right-radius: .8em;
 
     box-shadow: .5em 0.5em 1em .1em rgb(31, 31, 31);
+}
+
+.textDesignServices {
+    margin: 0;
+    height: 20vh;
+    width: 100vw;
+    border-radius: 0em;
+
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+
+    flex-direction: row;
+    justify-content: space-around;
+
+    box-shadow: 0 0 0 0;
+}
+
+.textDesignAppointments {
+    margin: 0;
+    height: 20vh;
+    width: 100vw;
+    border-radius: 0em;
+
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+
+    background-color: rgb(68, 68, 68);
+    color: rgb(255, 255, 255);
+
+
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 0 0 0;
 }

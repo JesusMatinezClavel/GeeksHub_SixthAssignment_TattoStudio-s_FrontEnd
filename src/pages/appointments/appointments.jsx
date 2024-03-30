@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import './appointments.css'
 import { Header } from "../../common/header/header";
 import { getOwnAppointments } from "../../services/apiCalls";
-import { CCard } from "../../common/c-card/cCard";
+import { CButton } from "../../common/c-button/cButton";
 import { CText } from "../../common/c-text/cText";
 
 export const Appointments = () => {
@@ -20,6 +20,7 @@ export const Appointments = () => {
             try {
                 const fetched = await getOwnAppointments(storagedToken)
                 setAppointments(fetched.data)
+                console.log(fetched);
             } catch (error) {
                 console.log(error.message);
             }
@@ -27,19 +28,22 @@ export const Appointments = () => {
         getAppointments()
     }, [])
 
-    console.log(appointments);
+
 
     return (
         <>
             <Header />
             <div className="appointmentsDesign">
-                {appointments.map((appointments, index)=>(
-                    <CCard key={index} className={"cardDesign"}>
-                        <CText>
+                <CButton title={"new Appointment"} />
+                {appointments.map((appointments, index) => (
+                    <CText key={index} className={"textDesignAppointments"}>
+                        <div className="AppointmentsText">
                             <div className="appointmentDate">{appointments.appointmentDate}</div>
-                            <div className="service">{appointments.service}</div>
-                        </CText>
-                    </CCard>
+                            <div className="service">{appointments.service.serviceName}</div>
+                        </div>
+                        <CButton title={"Change appointment"} />
+                    </CText>
+
                 ))}
             </div>
         </>

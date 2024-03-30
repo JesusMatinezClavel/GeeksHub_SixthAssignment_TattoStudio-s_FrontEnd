@@ -1,14 +1,52 @@
 .servicesDesign{
-    height: 75vh;
+    height: 75%;
     width: 100vw;
 
     color: black;
     
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
 
     background-color: rgb(131, 122, 112);
+}
+
+.serviceImg {
+    height:95%;
+    width: 18em;
+    background-color: aliceblue;
+}
+
+.servicesText{
+
+    width: 50vw;
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttonEmpty{
+    height: auto;
+    width: auto;
+
+    background-color: rgb(73, 73, 73);
+    border:.1em solid black;
+
+    margin: .5em;
+    padding: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+
+    border-bottom-left-radius: .8em;
+    border-top-right-radius: .8em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
 }
