@@ -2,7 +2,6 @@ import { getAllServices } from "../../services/apiCalls";
 import { useState, useEffect } from "react";
 import { newAppointment } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
-import dayjs from "dayjs";
 
 import { Header } from "../../common/header/header";
 import { CText } from "../../common/c-text/cText";
@@ -22,7 +21,6 @@ export const Services = () => {
     const [appointmentMsg, setAppointmentMsg] = useState("")
     const [appointmentData, setAppointmentData] = useState({
         date: "",
-        time: "",
         service: ""
     })
 
@@ -38,12 +36,10 @@ export const Services = () => {
         }
         getServices()
     }, [])
-
-    const fetched = async (index) => {
+    const fetched = async () => {
         const fetched = await newAppointment(storagedToken, appointmentData)
         setAppointmentMsg(fetched.message)
     }
-
     const createAppointment = async (index) => {
         try {
             setSelectedService(prevState => [...prevState, index]),
@@ -52,7 +48,10 @@ export const Services = () => {
 
                         fetched(),
                         setSelectedService(prevState => []),
-                        setShowBox(false)
+                        setShowBox(false),
+                        setTimeout(() => {
+                            setAppointmentMsg("")
+                        }, 2000)
                     )
                     : (
                         setAppointmentData(prevState => ({
@@ -67,14 +66,12 @@ export const Services = () => {
         }
     }
     const inputHandler = (e) => (
-        setAppointmentData((prevState) => (
-            {
-                ...prevState,
-                [e.target.name]: e.target.value
-            })
+        setAppointmentData(prevState => ({
+            ...prevState,
+            date: e.target.value
+        })
         )
     )
-    console.log(appointmentData);
 
     return (
         <>
@@ -93,7 +90,7 @@ export const Services = () => {
                                     ) : (
                                         <CButton className={"offButton"} title={"New appointment"} />
                                     )}
-                            <div className="errorMsg">{appointmentMsg}</div>
+                            <div className={"errorMsg"}>{appointmentMsg}</div>
 
                             <div key={index} className={`${showBox === true && selectedService.includes(index) ? "newAppointmentShow" : "newAppointmentHide"}`}>
                                 <CInput
@@ -101,13 +98,6 @@ export const Services = () => {
                                     type={"date"}
                                     name={"date"}
                                     value={appointmentData.date || ""}
-                                    onChange={(e) => inputHandler(e)}
-                                />
-                                <CInput
-                                    className={"inputDesign"}
-                                    type={"time"}
-                                    name={"time"}
-                                    value={appointmentData.time || ""}
                                     onChange={(e) => inputHandler(e)}
                                 />
                             </div>

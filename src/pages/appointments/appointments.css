@@ -18,10 +18,14 @@
 
 .AppointmentsText{
 
-    padding: 1em;
+    padding: .7em;
 
     border-bottom-left-radius: .8em;
     border-top-right-radius: .8em;
 
     background-color: rgba(100, 99, 99, 0.226);
+}
+
+.hide{
+    display: none;
 }

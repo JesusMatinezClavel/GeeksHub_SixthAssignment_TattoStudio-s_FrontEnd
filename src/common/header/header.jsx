@@ -14,28 +14,42 @@ export const Header = () => {
         navigate("/")
     }
 
+    console.log(tokenData);
+
     return (
         <div className="headerDesign">
             <div className="headerHome">
                 <Navigator title={"Home"} destination="/" />
             </div>
-            {!tokenData?.userToken
+            {!tokenData?.userToken 
                 ? (
                     <div className="headerRest">
-                        <Navigator title={"Services"} destination="/services" />
-                        <Navigator title={"Register"} destination="/register" />
-                        <Navigator title={"Login"} destination="/login" />
-                    </div>
-                ) : (
-                    <div className="headerRest">
+                    <Navigator title={"Services"} destination="/services" />
+                    <Navigator title={"Register"} destination="/register" />
+                    <Navigator title={"Login"} destination="/login" />
+                </div>
+                ) : tokenData?.userTokenData.roleName === "super_admin"
+                    ? (
+
+                        <div className="headerRest">
                         <Navigator title={"Services"} destination="/services" />
                         <Navigator title={"Profile"} destination="/users/profile" />
                         <Navigator title={"Appointments"} destination="/appointments" />
                         <div onClick={logOut}>
-                        <Navigator title={"LogOut"} destination="/"/>
+                            <Navigator title={"LogOut"} destination="/" />
                         </div>
                     </div>
-                )}
+                    ) : (
+                        <div className="headerRest">
+                        <Navigator title={"Services"} destination="/services" />
+                        <Navigator title={"Profile"} destination="/users/profile" />
+                        <Navigator title={"Appointments"} destination="/appointments" />
+                        <div onClick={logOut}>
+                            <Navigator title={"LogOut"} destination="/" />
+                        </div>
+                    </div>
+                    )
+            }
         </div>
     )
 }

@@ -133,3 +133,22 @@ export const newAppointment = async (token, appointmentData) => {
         return data.message
     }
 }
+
+export const deleteAppointment = async (token, editData) => {
+    const options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(editData)
+    }
+    try {
+        const response = await fetch(`${root}/appointments`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return data.message
+    }
+}

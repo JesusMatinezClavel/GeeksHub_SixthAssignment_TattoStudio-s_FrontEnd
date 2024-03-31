@@ -11,3 +11,10 @@
 
     box-shadow: .5em 0.5em 1em .1em rgb(31, 31, 31);
 }
+
+.appointmentInput{
+    border:0px;
+    padding: .2em;
+    background-color: rgba(245, 245, 220, 0);
+    box-shadow: inset 0em 0em 7px .1px rgb(0, 0, 0);
+}
