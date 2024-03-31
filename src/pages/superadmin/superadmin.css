@@ -1,0 +1,53 @@
+.superadminDesign {
+    height: 75%;
+    width: 100vw;
+
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: start;
+
+    background-color: rgb(131, 122, 112);
+}
+
+.superadminButtons {
+    height: 100%;
+    width: 20%;
+}
+
+.allUsers {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(32, 74, 110);
+}
+.noneSelected {
+    height: 75vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(32, 74, 110);
+}
+
+.usersText {
+    height: 4em;
+    width: 3em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.hide {
+    display: none;
+}

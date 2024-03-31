@@ -95,7 +95,6 @@ export const getAllServices = async () => {
     }
 }
 
-
 export const getOwnAppointments = async (token) => {
     const options = {
         method: "GET",
@@ -150,5 +149,41 @@ export const deleteAppointment = async (token, editData) => {
         return data
     } catch (error) {
         return data.message
+    }
+}
+
+export const superadminGetUsers = async (token) => {
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    try {
+        const response = await fetch(`${root}/users`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return data.message
+    }
+}
+
+export const deleteUser = async (token, userID) => {
+    const options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    try {
+        const response = await fetch(`${root}/users/${userID}`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error.message
     }
 }

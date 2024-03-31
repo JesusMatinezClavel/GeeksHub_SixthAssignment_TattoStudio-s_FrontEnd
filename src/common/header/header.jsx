@@ -14,8 +14,6 @@ export const Header = () => {
         navigate("/")
     }
 
-    console.log(tokenData);
-
     return (
         <div className="headerDesign">
             <div className="headerHome">
@@ -32,6 +30,7 @@ export const Header = () => {
                     ? (
 
                         <div className="headerRest">
+                        <Navigator title={"SuperAdmin"} destination="/superadmin" />
                         <Navigator title={"Services"} destination="/services" />
                         <Navigator title={"Profile"} destination="/users/profile" />
                         <Navigator title={"Appointments"} destination="/appointments" />
