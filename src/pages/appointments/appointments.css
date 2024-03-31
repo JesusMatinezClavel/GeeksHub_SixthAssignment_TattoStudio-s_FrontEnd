@@ -2,14 +2,7 @@
     height: 75%;
     width: 100vw;
 
-    color: black;
-    
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: rgb(173, 163, 161);
+    background-color: rgb(255, 255, 255);
 }
 
 .appointmentsDesignEmpty{
@@ -18,12 +11,14 @@
 
 .AppointmentsText{
 
+    width: 15em;
+
     padding: .7em;
 
     border-bottom-left-radius: .8em;
     border-top-right-radius: .8em;
 
-    background-color: rgba(100, 99, 99, 0.226);
+    background-color: rgba(255, 255, 255, 0.295);
 }
 
 .hide{

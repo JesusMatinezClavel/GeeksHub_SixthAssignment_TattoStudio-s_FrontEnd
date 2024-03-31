@@ -56,6 +56,7 @@ export const Services = () => {
                     : (
                         setAppointmentData(prevState => ({
                             ...prevState,
+                            date: "",
                             service: index + 1
                         })),
                         setShowBox(true)

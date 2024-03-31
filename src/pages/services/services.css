@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: rgb(131, 122, 112);
+    background-color: rgb(235, 235, 235);
 }
 
 .serviceImg {
@@ -18,10 +18,11 @@
     background-color: aliceblue;
 
     border-radius: 50%;
-    border: .1em white solid;
+    border: .3em rgb(255, 255, 255) solid;
 
-    box-shadow: 0em 0em 3em 3px white;
-    background-color: rgb(48, 48, 48);
+    box-shadow: inset 0em 0em 1em 3px rgba(252, 252, 252, 0.288),
+    0em 0em 2em 3px rgb(0, 0, 0);
+    background-color: rgb(43, 43, 43);
 }
 
 .serviceName{

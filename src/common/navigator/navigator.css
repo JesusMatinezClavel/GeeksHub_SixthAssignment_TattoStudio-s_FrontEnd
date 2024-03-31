@@ -1,13 +1,25 @@
 .navigatorDesign {
-    color: rgb(255, 255, 255);
-  
-    transition: 0.2s;
-  
-    margin: 1em;
-  }
-  
-  .navigatorDesign:hover {
-    color: rgb(255, 37, 48);
-    transition: 0.2s;
-    cursor: pointer;
-  }
+  height: 5.9em;
+  width: 8em;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border:.1em solid black;
+
+  transition: 0.2s;
+
+}
+
+.navigatorDesign:hover {
+  transition: 3s;
+  transform: translateY(1em);
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  transition: 0.2s;
+  cursor: pointer;
+}

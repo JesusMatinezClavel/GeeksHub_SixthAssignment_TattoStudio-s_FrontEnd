@@ -59,7 +59,7 @@ export const Appointments = () => {
     return (
         <>
             <Header />
-            {appointments.length < 3
+            {appointments.length < 7
                 ? (
                     <div className="appointmentsDesignEmpty">
                         {appointments.map((appointments, index) => (
