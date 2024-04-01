@@ -39,12 +39,20 @@ export const Header = () => {
                     ? (
 
                         <div className="headerRest">
-                            <Navigator title={"SuperAdmin"} destination="/superadmin" />
                             <Navigator title={"Services"} destination="/services" />
-                            <Navigator title={"Profile"} destination="/users/profile" />
-                            <Navigator title={"Appointments"} destination="/appointments" />
-                            <div onClick={logOut}>
-                                <Navigator title={"LogOut"} destination="/" />
+                            <div className="userDeployable">
+                                <img src="../../../img\profile/userImg.png" alt="userProfile Default Image" onClick={() => click()} />
+                                <div className={`${userDeploy ? "userOptions" : "userOptionshidden"}`}>
+                                    <div className="optionsProfile">
+                                        <Navigator className={"optionsLink"} title={"SuperAdmin"} destination="/superadmin" />
+                                        <Navigator className={"optionsLink"} title={"Profile"} destination="/users/profile" />
+                                        <Navigator className={"optionsLink"} title={"Appointments"} destination="/appointments" />
+                                        <div onClick={logOut}>
+                                            <Navigator className={"optionsLink"} title={"LogOut"} destination="/" />
+                                        </div>
+                                    </div>
+                                    <div className="optionsAppointments"></div>
+                                </div>
                             </div>
                         </div>
                     ) : (
