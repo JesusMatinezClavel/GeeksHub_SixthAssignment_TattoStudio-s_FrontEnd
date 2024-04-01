@@ -1,12 +1,29 @@
 .footerDesign {
-    height: 15vh;
+    height: 25vh;
     width: 100vw;
 
     color: black;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: row;
     align-items: center;
 
-    background-color: rgb(8, 90, 110);
+    background-color: #7a959e;
+}
+
+.rrss{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.rrss img {
+    height: 3em;
+    width: 3em;
+    margin: 2em;
+
+    border-radius: 50%;
+    box-shadow: 0em 0em 2em .3em #424e5e;
 }

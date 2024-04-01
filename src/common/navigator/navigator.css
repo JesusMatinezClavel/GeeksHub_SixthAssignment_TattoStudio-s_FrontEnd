@@ -1,25 +1,38 @@
 .navigatorDesign {
-  height: 5.9em;
+  height: 4em;
   width: 8em;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-
+  color: #3b2b46;
+  font-weight: 600;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border:.1em solid black;
+  margin-right: 3em;
 
-  transition: 0.2s;
+  line-height: 2em;
+  letter-spacing: .2em;
 
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+  transition: .2s;
 }
 
 .navigatorDesign:hover {
-  transition: 3s;
-  transform: translateY(1em);
-  background-color: rgb(14, 14, 14);
-  color: rgb(255, 255, 255);
-  transition: 0.2s;
+
+  transform: translatey(.5em);
+
+  align-items: end;
+
+  transition: .2s;
+
+  color: #512f68;
+  border-bottom: .4em solid #512f68;
+
   cursor: pointer;
+  
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
 }

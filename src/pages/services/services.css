@@ -1,5 +1,5 @@
 .servicesDesign{
-    height: 75%;
+    height: 135em;
     width: 100vw;
 
     color: black;
@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: rgb(235, 235, 235);
+    background-color: #ffffea;
 }
 
 .serviceImg {

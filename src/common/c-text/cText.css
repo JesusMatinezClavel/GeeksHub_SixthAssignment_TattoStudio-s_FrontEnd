@@ -6,7 +6,6 @@
     /* margin-bottom: 2.4em;
     margin-top: 2.4em; */
 
-    background-color: rgb(253, 253, 253);
     color: rgb(0, 0, 0);
 
     display: flex;
@@ -27,7 +26,6 @@
     border-radius: 0em;
 
     border-bottom: 1px solid black;
-    border-top: 1px solid black;
 
     flex-direction: row;
     justify-content: space-evenly;

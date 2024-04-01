@@ -82,6 +82,8 @@ export const Register = () => {
         <>
             <Header />
             <div className="registerDesign">
+            <div className="registerTitle">REGISTER</div>
+            <div className="loginRedirect">Are you registered?<a href="/login">Log in</a></div>
                 <CInput
                     className={"inputDesign"}
                     type={"text"}
