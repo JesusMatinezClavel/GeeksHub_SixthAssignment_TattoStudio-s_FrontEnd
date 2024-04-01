@@ -64,12 +64,19 @@ export const Register = () => {
         try {
             for (let element in registerCredentials) {
                 if (registerCredentials[element] === "") {
+                    setTimeout(() => {
+                        setRegisterMsg("")
+                    }, 2000);
                     throw new Error('Every field must be completed')
                 }
             }
             const fetched = await registerReq(registerCredentials)
 
             fetched.success ? navigate("/login") : setRegisterMsg(fetched.message)
+
+            setTimeout(() => {
+                setRegisterMsg("")
+            }, 1200);
 
         } catch (error) {
             setRegisterMsg(error.message);
@@ -82,8 +89,10 @@ export const Register = () => {
         <>
             <Header />
             <div className="registerDesign">
-            <div className="registerTitle">REGISTER</div>
-            <div className="loginRedirect">Are you registered?<a href="/login">Log in</a></div>
+                <div className="registerTitle">REGISTER</div>
+                <div className="line"></div>
+
+                <div className="loginRedirect">Are you registered?<a href="/login">Log in</a></div>
                 <CInput
                     className={"inputDesign"}
                     type={"text"}
@@ -128,7 +137,7 @@ export const Register = () => {
                     onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{registerErrorMsg.passwordHashError}</div>
-                <CButton className={"buttonDesign"} onClick={registerMe} title={"Register"} />
+                <CButton className={"buttonRegister"} onClick={registerMe} title={"Register"} />
                 <div className={`errorMsg`}>{registerMsg}</div>
             </div>
         </>

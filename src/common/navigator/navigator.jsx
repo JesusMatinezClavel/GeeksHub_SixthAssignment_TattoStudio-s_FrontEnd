@@ -1,11 +1,13 @@
 import './navigator.css'
 import { useNavigate } from "react-router-dom";
 
-export const Navigator = ({ title, destination}) => {
+export const Navigator = ({className, title, destination}) => {
     const navigate = useNavigate()
 
+    const combinedClasses = `navigatorDesign ${className || ""}`
+
     return (
-        <div className="navigatorDesign" onClick={() => navigate(destination)}>
+        <div className={combinedClasses} onClick={() => navigate(destination)}>
             {title}
         </div>
     )

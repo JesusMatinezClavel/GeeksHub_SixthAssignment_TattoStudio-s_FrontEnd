@@ -6,9 +6,12 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 
   margin-right: 3em;
+  margin-left: 3em;
+
+  border-bottom: .1em solid #512f68;
 
   line-height: 2em;
   letter-spacing: .2em;
@@ -20,10 +23,7 @@
 }
 
 .navigatorDesign:hover {
-
-  transform: translatey(.5em);
-
-  align-items: end;
+  align-items: center;
 
   transition: .2s;
 
