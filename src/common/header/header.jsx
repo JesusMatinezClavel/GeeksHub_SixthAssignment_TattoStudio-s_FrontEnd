@@ -51,7 +51,7 @@ export const Header = () => {
                         <div className="headerRest">
                             <Navigator title={"Services"} destination="/services" />
                             <div className="userDeployable">
-                                <img src="../../../img\userImg.png" alt="userProfile Default Image" onClick={() => click()} />
+                                <img src="../../../img\profile/userImg.png" alt="userProfile Default Image" onClick={() => click()} />
                                 <div className={`${userDeploy ? "userOptions" : "userOptionshidden"}`}>
                                     <div className="optionsProfile">
                                         <Navigator className={"optionsLink"} title={"Profile"} destination="/users/profile" />

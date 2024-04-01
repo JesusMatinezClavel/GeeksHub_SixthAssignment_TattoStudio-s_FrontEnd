@@ -40,13 +40,24 @@
 
 .offButton {
     background-color: rgba(128, 128, 128, 0.562);
-    color: rgba(255, 255, 255, 0.377);
-
+    margin-top: 1.5em;
+    color: rgb(145, 145, 139);
+    box-shadow: 0em 0em 0em 0em;
+    
     &:hover {
+        cursor: initial;
         background-color: rgba(128, 128, 128, 0.562);
+    }
+    &:active {
+        transform: translateY(0em);
+        box-shadow: 0em 0em 0em 0em;
     }
 }
 
 .buttonRegister {
+    margin-top: 1.5em;
+}
+
+.buttonNewAppointment {
     margin-top: 1.5em;
 }
