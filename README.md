@@ -1,6 +1,6 @@
 # Tattoo's Studio📢
 
-![Tattoo_Studio](./img\home\homePicture.jpg)
+![Tattoo_Studio](./img/home/homePicture.png)
 
 <details>
   <summary>Content 📝</summary>
