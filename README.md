@@ -68,13 +68,14 @@ This aplication has been created as an assignment for the GeeksHub's FullStackDe
 ![ServicesView 02](./img/readme/ServicesView%2002.png)
 ![ServicesView 03](./img/readme/ServicesView%2003.png)
 
+### Register ✍🏼
+
+![Register](./img/readme/Register.png)
+
 ### Log In 👍🏼
 
 ![LoginView](./img/readme/LoginView.png)
 
-### Register ✍🏼
-
-![Register](./img/readme/Register.png)
 
 ### Appointments Empty 🙏🏼
 
