@@ -123,7 +123,6 @@ export const newAppointment = async (token, appointmentData) => {
         },
         body: JSON.stringify(appointmentData)
     }
-    console.log(options.body);
     try {
         const response = await fetch(`${root}/appointments`, options)
         const data = await response.json()

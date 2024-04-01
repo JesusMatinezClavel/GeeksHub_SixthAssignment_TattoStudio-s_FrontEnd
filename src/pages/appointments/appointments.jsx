@@ -16,6 +16,7 @@ export const Appointments = () => {
     const [appointments, setAppointments] = useState([])
     const [storagedToken, setStoragedToken] = useState(tokenData?.userToken)
     const [updateDate, setUpdateDate] = useState(false)
+    const [deleteMsg, setDeleteMsg]=useState("")
     const [editData, setEditData] = useState({
         date: "",
         service: ""
@@ -35,14 +36,12 @@ export const Appointments = () => {
 
     const selectAppointment = async (index) => {
         const deleteDate = appointments[index].appointmentDatetime
-        console.log(deleteDate);
         setEditData({
             date: deleteDate,
             service: appointments[index].service.id
         })
         try {
             const fetched = await deleteAppointment(storagedToken, editData)
-            console.log(fetched);
         } catch (error) {
             console.log(error);
         }
@@ -59,36 +58,43 @@ export const Appointments = () => {
     return (
         <>
             <Header />
-            {appointments.length < 7
+            {appointments.length === 0
                 ? (
                     <div className="appointmentsDesignEmpty">
-                        {appointments.map((appointments, index) => (
-                            <CText key={index} className={"textDesignAppointments"}>
-                                <div className="AppointmentsText">
-                                    <div className={""}>{dayjs(appointments.appointmentDatetime, "YYYY-MM-DD").format("MMM-DD-YYYY")}</div>
-                                    <div className="">{appointments.service.serviceName}</div>
-                                </div>
-                                <div className="appointmentsInputs"></div>
-                                <CButton title={"Delete appointment"} onClick={() => selectAppointment(index)} />
-                            </CText>
-
-                        ))}
+                        <div className="appointmentTitle">You don't have any appointments!</div>
                     </div>
-                )
-                : (
-                    <div className="appointmentsDesign">
-                        {appointments.map((appointments, index) => (
-                            <CText key={index} className={"textDesignAppointments"}>
-                                <div className="AppointmentsText">
-                                    <div className="appointmentDatetime">{dayjs(appointments.appointmentDatetime, "YYYY-MM-DD").format("MMM-DD-YYYY")}</div>
-                                    <div className="service">{appointments.service.serviceName}</div>
-                                </div>
-                                <CButton title={"Delete appointment"} onClick={() => selectAppointment(index)} />
-                            </CText>
+                ) : appointments.length < 7
+                    ? (
+                        <div className="appointmentsDesignEmpty">
+                            {appointments.map((appointments, index) => (
+                                <CText key={index} className={`${index % 2 === 0 ? "textDesignAppointments" : "textDesignAppointmentsVersion"}`}>
+                                    <div className="AppointmentsText">
+                                        <div className={"appointmentData"}>{dayjs(appointments.appointmentDatetime, "YYYY-MM-DD").format("MMM-DD-YYYY")}</div>
+                                        <div className="line"></div>
+                                        <div className="appointmentData">{appointments.service.serviceName}</div>
+                                    </div>
+                                    <div className="appointmentsInputs"></div>
+                                    <CButton title={"Delete appointment"} onClick={() => selectAppointment(index)} />
+                                </CText>
 
-                        ))}
-                    </div>
-                )
+                            ))}
+                        </div>
+                    )
+                    : (
+                        <div className="appointmentsDesign">
+                            {appointments.map((appointments, index) => (
+                                <CText key={index} className={`${index % 2 === 0 ? "textDesignAppointments" : "textDesignAppointmentsVersion"}`}>
+                                    <div className="AppointmentsText">
+                                        <div className="appointmentData">{dayjs(appointments.appointmentDatetime, "YYYY-MM-DD").format("MMM-DD-YYYY")}</div>
+                                        <div className="line"></div>
+                                        <div className="appointmentData">{appointments.service.serviceName}</div>
+                                    </div>
+                                    <CButton title={"Delete appointment"} onClick={() => selectAppointment(index)} />
+                                </CText>
+
+                            ))}
+                        </div>
+                    )
             }
 
         </>

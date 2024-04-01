@@ -115,7 +115,7 @@ export const Profile = () => {
                     setUpdateError(true)
                     setUpdateMsg(valid)
                     return valid
-                } 
+                }
             }
             if (profileUpdate.passwordHash !== profileUpdate.verifyPassword) {
                 setUpdateError(true)
@@ -153,17 +153,23 @@ export const Profile = () => {
                 {editable === false
                     ? (
                         <CCard className="cardDesign">
+                            <img src="../../../img\userImg.png" alt="" />
                             <div className="profileTextBox">
+                                first name
                                 <CText className={"textDesign"}>{profileData.firstName}</CText>
+                                last name
                                 <CText className={"textDesign"}>{profileData.lastName}</CText>
+                                email
                                 <CText className={"textDesign"}>{profileData.email}</CText>
                             </div>
                         </CCard>
                     ) : (
                         <CCard className="cardUpdate">
+                            <img src="../../../img\userImg.png" alt="" />
                             <div className="profileTextBox">
+                                <p>edit profile</p>
                                 <CInput
-                                    className={"inputDesign"}
+                                    className={"inputDesignProfile"}
                                     type={"text"}
                                     name={"firstName"}
                                     value={profileUpdate.firstName || ""}
@@ -174,7 +180,7 @@ export const Profile = () => {
                                 />
                                 {/* <div className={"errorMsg"}>{profileUpdateError.firstNameError}</div> */}
                                 <CInput
-                                    className={"inputDesign"}
+                                    className={"inputDesignProfile"}
                                     type={"text"}
                                     name={"lastName"}
                                     value={profileUpdate.lastName || ""}
@@ -185,7 +191,7 @@ export const Profile = () => {
                                 />
                                 {/* <div className={"errorMsg"}>{profileUpdateError.lastNameError}</div> */}
                                 <CInput
-                                    className={"inputDesign"}
+                                    className={"inputDesignProfile"}
                                     type={"email"}
                                     name={"email"}
                                     value={profileUpdate.email || ""}
@@ -196,7 +202,7 @@ export const Profile = () => {
                                 />
                                 {/* <div className={"errorMsg"}>{profileUpdateError.emailError}</div> */}
                                 <CInput
-                                    className={"inputDesign"}
+                                    className={"inputDesignProfile"}
                                     type={"password"}
                                     name={"passwordHash"}
                                     value={profileUpdate.passwordHash || ""}
@@ -207,7 +213,7 @@ export const Profile = () => {
                                 />
                                 {/* <div className={"errorMsg"}>{profileUpdateError.passwordHashError}</div> */}
                                 <CInput
-                                    className={"inputDesign"}
+                                    className={"inputDesignProfile"}
                                     type={"password"}
                                     name={"verifyPassword"}
                                     value={profileUpdate.verifyPassword || ""}

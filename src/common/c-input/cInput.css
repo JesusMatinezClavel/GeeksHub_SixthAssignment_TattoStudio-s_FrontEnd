@@ -32,3 +32,18 @@
     background-color: rgba(245, 245, 220, 0);
     box-shadow: inset 0em 0em 7px .1px rgb(0, 0, 0);
 }
+
+.inputDesignProfile{
+    background-color: #7a959e;
+    color:#3b2b46;
+    &:focus {
+        color: #3b2b46;
+        outline: none;
+        border-bottom: .1em solid #3b2b46;
+    }
+
+    &:not(:placeholder-shown) {
+        color: #3b2b46;
+        background-color:  #7a959e;
+    }
+}

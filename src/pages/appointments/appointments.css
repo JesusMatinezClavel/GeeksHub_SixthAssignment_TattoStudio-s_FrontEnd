@@ -2,11 +2,12 @@
     height: 75%;
     width: 100vw;
 
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffea;
 }
 
 .appointmentsDesignEmpty{
     height: 75vh;
+    background-color: #ffffea;
 }
 
 .AppointmentsText{
@@ -18,9 +19,37 @@
     border-bottom-left-radius: .8em;
     border-top-right-radius: .8em;
 
-    background-color: rgba(255, 255, 255, 0.295);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: rgba(255, 255, 255, 0.082);
 }
 
 .hide{
     display: none;
+}
+
+.appointmentTitle{
+
+    height: 3em;
+
+    color: black;
+
+    font-size: 1.6em;
+    line-height: 2em;
+    letter-spacing: .2em;
+    text-decoration: underline;
+}
+
+.line {
+    height: .2em;
+    width: 6em;
+    margin-bottom: 1em;
+    margin-top:1em;
+
+    border-radius: .5em;
+
+    background-color: #3b2b46;
 }

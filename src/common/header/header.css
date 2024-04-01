@@ -24,6 +24,10 @@
     &:hover{
         cursor: pointer;
     }
+    &:active{
+        height: 5.2em;
+        width: 5.2em;
+    }
 }
 
 .optionsLink{

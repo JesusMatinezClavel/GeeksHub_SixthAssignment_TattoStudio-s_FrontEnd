@@ -2,7 +2,10 @@
     height: 75vh;
     width: 100vw;
 
-    color: rgb(255, 255, 255);
+    color: #424e5e;
+    font-weight: 800;
+    font-size: 1.2em;
+    letter-spacing: .9em;
     
     display: flex;
     justify-content: center;
@@ -10,19 +13,25 @@
     align-items: center;
 
 
-    background-color: rgb(240, 240, 240);
+    background-color: #ffffea;
 }
   
   .profileTextBox .inputDesign {
     display: block;
   }
 
+  .profileTextBox p{
+    margin-left: -1.2em;
+  }
+
   .updateError{
     height: 2em;
     width: 7em;
 
-    background-color: rgb(134, 26, 49);
+    background-color: #3b2b46;
     border:.1em solid black;
+
+    line-height: .9em;
 
     margin: .5em;
 
@@ -38,7 +47,7 @@
 
 
     &:hover{
-        background-color: aquamarine;
+        background-color: #a795a5;
         cursor: pointer;
     }
   }
