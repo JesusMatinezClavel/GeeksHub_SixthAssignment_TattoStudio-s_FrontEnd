@@ -95,21 +95,95 @@ export const getAllServices = async () => {
     }
 }
 
-
-export const getOwnAppointments = async (token) => { 
-    const options={
-        method:"GET",
-        headers:{
+export const getOwnAppointments = async (token) => {
+    const options = {
+        method: "GET",
+        headers: {
             "Content-Type": "Application/json",
             "Authorization": `Bearer ${token}`
         }
     }
     try {
-        const response = await fetch(`${root}/appointments`,options)
+        const response = await fetch(`${root}/appointments`, options)
         const data = await response.json()
 
         return data
     } catch (error) {
         return data.error
+    }
+}
+
+export const newAppointment = async (token, appointmentData) => {
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(appointmentData)
+    }
+    console.log(options.body);
+    try {
+        const response = await fetch(`${root}/appointments`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return data.message
+    }
+}
+
+export const deleteAppointment = async (token, editData) => {
+    const options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(editData)
+    }
+    try {
+        const response = await fetch(`${root}/appointments`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return data.message
+    }
+}
+
+export const superadminGetUsers = async (token) => {
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    try {
+        const response = await fetch(`${root}/users`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return data.message
+    }
+}
+
+export const deleteUser = async (token, userID) => {
+    const options = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "Application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    try {
+        const response = await fetch(`${root}/users/${userID}`, options)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        return error.message
     }
 }

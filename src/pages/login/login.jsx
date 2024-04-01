@@ -30,9 +30,9 @@ export const Login = () => {
 
     // Login Functions
 
-    useEffect(() => { 
-        storagedToken ? navigate("/") :null
-    },[storagedToken])
+    useEffect(() => {
+        storagedToken ? navigate("/") : null
+    }, [storagedToken])
 
     const inputHandler = (e) => {
         setLoginCredentials((prevState) => ({
@@ -89,6 +89,8 @@ export const Login = () => {
         <>
             <Header />
             <div className="loginDesign">
+                <div className="loginTitle">LOG IN</div>
+                <div className="registerRedirect">Are you not registered?<a href="/register">register</a></div>
                 <CInput
                     className={"inputDesign"}
                     type={"text"}

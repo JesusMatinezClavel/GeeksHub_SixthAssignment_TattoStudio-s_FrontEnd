@@ -1,13 +1,38 @@
 .navigatorDesign {
-    color: rgb(255, 255, 255);
+  height: 4em;
+  width: 8em;
+  color: #3b2b46;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 3em;
+
+  line-height: 2em;
+  letter-spacing: .2em;
+
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+  transition: .2s;
+}
+
+.navigatorDesign:hover {
+
+  transform: translatey(.5em);
+
+  align-items: end;
+
+  transition: .2s;
+
+  color: #512f68;
+  border-bottom: .4em solid #512f68;
+
+  cursor: pointer;
   
-    transition: 0.2s;
-  
-    margin: 1em;
-  }
-  
-  .navigatorDesign:hover {
-    color: rgb(255, 37, 48);
-    transition: 0.2s;
-    cursor: pointer;
-  }
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+
+}

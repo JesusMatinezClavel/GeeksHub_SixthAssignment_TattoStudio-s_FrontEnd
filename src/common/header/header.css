@@ -4,13 +4,15 @@
 
     color: black;
 
+    
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    background-color: rgb(8, 90, 110);
+    background-color: #ffffea;
 }
 
 .headerRest {
     display: flex;
+    
 }

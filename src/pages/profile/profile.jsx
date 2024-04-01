@@ -125,7 +125,6 @@ export const Profile = () => {
             setUpdateError(false)
             !updateError
                 ? (
-                    console.log("joder"),
                     setUpdateMsg("Profile updated!"),
                     setTimeout(() => {
                         setUpdateMsg("")

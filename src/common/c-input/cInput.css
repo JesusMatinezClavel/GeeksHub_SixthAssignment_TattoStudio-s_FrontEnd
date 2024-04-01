@@ -3,11 +3,32 @@
     width: 19em;
     margin: 1em;
 
-    background-color: rgb(58, 57, 57);
-    border: 1px solid rgb(59, 59, 59);
+    color: #3b2b46;
 
-    border-bottom-left-radius: 1em;
-    border-top-right-radius: 1em;
+    background-color: #ffffea;
+    border: 0px solid #ffffea;
+    border-bottom: .1em solid #3b2b46;
 
-    box-shadow: .5em 0.5em 1em .1em rgb(31, 31, 31);
+    /* border-bottom-left-radius: 1em;
+    border-top-right-radius: 1em; */
+    line-height: 2em;
+    letter-spacing: .2em;
+
+    &:focus {
+        color: #3b2b46;
+        outline: none;
+        border-bottom: .1em solid #3b2b46;
+    }
+
+    &:not(:placeholder-shown) {
+        color: #3b2b46;
+        background-color: #ffffea;
+    }
+}
+
+.appointmentInput {
+    border: 0px;
+    padding: .2em;
+    background-color: rgba(245, 245, 220, 0);
+    box-shadow: inset 0em 0em 7px .1px rgb(0, 0, 0);
 }

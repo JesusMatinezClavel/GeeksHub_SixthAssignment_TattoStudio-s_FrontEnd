@@ -1,4 +1,4 @@
-.textDesign{
+.textDesign {
     height: auto;
     width: 16em;
     margin: 1em;
@@ -6,8 +6,7 @@
     /* margin-bottom: 2.4em;
     margin-top: 2.4em; */
 
-    background-color: rgb(68, 68, 68);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 
     display: flex;
     justify-content: center;
@@ -18,4 +17,48 @@
     border-top-right-radius: .8em;
 
     box-shadow: .5em 0.5em 1em .1em rgb(31, 31, 31);
+}
+
+.textDesignServices {
+    margin: 0;
+    height: 50vh;
+    width: 100vw;
+    border-radius: 0em;
+
+    border-bottom: 1px solid black;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    box-shadow: 0 0 0 0;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.textDesignAppointments {
+    margin: 0;
+    height: 10vh;
+    width: 100vw;
+    border-radius: 0em;
+
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+
+    background-color: rgb(85, 85, 85);
+    color: rgb(54, 54, 54);
+
+
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    box-shadow: 0 0 0 0;
+}
+
+.usersSuperadmin{
+    height: auto;
 }
