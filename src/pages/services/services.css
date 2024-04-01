@@ -1,5 +1,5 @@
 .servicesDesign{
-    height: 135em;
+    height: 150em;
     width: 100vw;
 
     color: black;
@@ -12,22 +12,48 @@
     background-color: #ffffea;
 }
 
-.serviceImg {
+[class^="serviceImg"]{
     height:25em;
     width: 25em;
-    background-color: aliceblue;
-
+    
     border-radius: 50%;
     border: .3em rgb(255, 255, 255) solid;
-
+    
     box-shadow: inset 0em 0em 1em 3px rgba(252, 252, 252, 0.288),
     0em 0em 2em 3px rgb(0, 0, 0);
     background-color: rgb(43, 43, 43);
 }
 
+.serviceImg0 {
+    background-image: url(../../../img/services/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.serviceImg1 {
+    background-image: url(../../../img/services/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.serviceImg2 {
+    background-image: url(../../../img/services/3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.serviceImg3 {
+    background-image: url(../../../img/services/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.serviceImg4 {
+    background-image: url(../../../img/services/5.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
 .serviceName{
-    margin-bottom: 5em;
-    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 4em;
+    font-weight: 700;
 }
 
 .servicesText{

@@ -6,9 +6,12 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 
   margin-right: 3em;
+  margin-left: 3em;
+
+  border-bottom: .1em solid #512f68;
 
   line-height: 2em;
   letter-spacing: .2em;
@@ -17,22 +20,24 @@
   border-bottom-right-radius: 1em;
 
   transition: .2s;
-}
-
-.navigatorDesign:hover {
-
-  transform: translatey(.5em);
-
-  align-items: end;
-
-  transition: .2s;
-
-  color: #512f68;
-  border-bottom: .4em solid #512f68;
-
-  cursor: pointer;
+  &:hover {
+    align-items: center;
   
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
+    transition: .2s;
+  
+    color: #512f68;
+    border-bottom: .4em solid #512f68;
+  
+    cursor: pointer;
+    
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
+  &:active{
+    border-bottom: .1em solid #512f68;
+    transition: .2s;
+    align-items: end;
 
+
+  }
 }

@@ -47,21 +47,23 @@ export const Superadmin = () => {
             <Header />
             <div className="superadminDesign">
                 <div className="superadminButtons">
-                    <CButton title={"Call users"} onClick={() => getAllUsers()} />
+                    <CButton className={"superadminButton"} title={"Call users"} onClick={() => getAllUsers()} />
                 </div>
                 <div className={`${pageSelected === "users" ? "allUsers" : "hide"}`}>
                     {users.map((users, index) => (
                         < CText key={index} className={"usersSuperadmin"} >
                             <div className="usersText">
-                                <div>{users.firstName}</div>
-                                <div>{users.lastName}</div>
-                                <div>{users.email}</div>
-                            </div>
+                                <div className="userData">{users.firstName}</div>
+                                <div className="line"></div>
+                                <div className="userData">{users.lastName}</div>
+                                <div className="line"></div>
+                                <div className="userData">{users.email}</div>
                             <CButton title={"Delete"} onClick={() => deleteSelected(index)} />
+                            </div>
                         </CText>
                     ))}
                 </div>
-                <div className={`${pageSelected === "" ? "noneSelected" : "hide"}`}>elige una funcion</div>
+                <div className={`${pageSelected === "" ? "noneSelected" : "hide"}`}>Choose a function</div>
             </div >
         </>
     )

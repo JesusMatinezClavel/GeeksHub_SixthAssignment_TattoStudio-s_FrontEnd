@@ -1,33 +1,45 @@
 .cardDesign {
     height: auto;
-    width: 20em;
+    width: auto;
 
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 
-    background-color: rgb(26, 134, 98);
+    background-color: #7a959e;
+
+    border: .2em solid #424e5e;
 
     border-bottom-left-radius: 2em;
     border-top-right-radius: 2em;
 
-    box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
+    box-shadow: 0em 0em 3em .1em rgb(41, 41, 41);
+}
+
+.cardDesign img{
+  height: 25em;
+  width: 25em;
 }
 
 .cardUpdate {
-    height: 18em;
-    width: 20em;
+    height: auto;
+    width: auto;
   
     display: flex;
     justify-content: center;
     align-items: center;
   
-    background-color:  rgb(26, 134, 98);
+    background-color:  #7a959e;
   
     border-bottom-left-radius: 2em;
     border-top-right-radius: 2em;
   
-    box-shadow: .5em 0.5em 1em .1em rgb(41, 41, 41);
+    box-shadow: inset 0em 0em 1em .1em rgb(41, 41, 41);
+  }
+
+  .cardUpdate img{
+    height: 25em;
+    width: 25em;
   }
 
   .cardDesignServices{

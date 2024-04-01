@@ -1,7 +1,7 @@
-.loginDesign{
+.loginDesign {
     height: 75vh;
     width: 100vw;
-    
+
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -10,7 +10,7 @@
     background-color: #ffffea;
 }
 
-.loginTitle{
+.loginTitle {
     height: 3em;
     width: 80em;
 
@@ -25,7 +25,7 @@
     color: #3b2b46;
 }
 
-.registerRedirect{
+.registerRedirect {
     height: 3em;
     width: 80em;
 
@@ -40,12 +40,14 @@
     letter-spacing: 1.1em;
     color: #3b2b46;
 }
-.registerRedirect a{
+
+.registerRedirect a {
     margin-top: .5em;
     text-decoration: none;
     font-weight: 600;
     color: #3b2b46;
-    &:hover{
+
+    &:hover {
         text-decoration: underline;
     }
 }
@@ -53,4 +55,14 @@
 .errorMsg {
     height: .5em;
     color: rgb(168, 168, 168);
+}
+
+.line {
+    height: .3em;
+    width: 6em;
+    margin-bottom: 1em;
+
+    border-radius: .5em;
+
+    background-color: #3b2b46;
 }

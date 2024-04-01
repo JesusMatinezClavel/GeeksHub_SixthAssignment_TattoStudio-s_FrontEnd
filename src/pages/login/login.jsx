@@ -61,6 +61,9 @@ export const Login = () => {
         try {
             for (let element in loginCredentials) {
                 if (loginCredentials[element] === "") {
+                    setTimeout(() => {
+                        setloginMsg("")
+                    }, 1200);
                     throw new Error('Every field must be completed')
                 }
             }
@@ -90,6 +93,7 @@ export const Login = () => {
             <Header />
             <div className="loginDesign">
                 <div className="loginTitle">LOG IN</div>
+                <div className="line"></div>
                 <div className="registerRedirect">Are you not registered?<a href="/register">register</a></div>
                 <CInput
                     className={"inputDesign"}
@@ -113,7 +117,7 @@ export const Login = () => {
                     onClick={(e) => emptyError(e)}
                 />
                 <div className={"errorMsg"}>{loginErrorMsg.passwordError}</div>
-                <CButton className={"buttonDesign"} onClick={logMeIn} title={"Log Me!"} />
+                <CButton className={"buttonRegister"} onClick={logMeIn} title={"Log Me!"} />
                 <div className={`errorMsg`}>{loginMsg}</div>
             </div>
         </>

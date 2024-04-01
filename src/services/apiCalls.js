@@ -1,4 +1,5 @@
-const root = "http://localhost:4000/api"
+// const root = "http://localhost:4000/api"
+const root = "https://tattooshop-db-dev-jfrt.2.sg-1.fl0.io/api"
 
 
 export const logReq = async (loginCredentials) => {
@@ -122,7 +123,6 @@ export const newAppointment = async (token, appointmentData) => {
         },
         body: JSON.stringify(appointmentData)
     }
-    console.log(options.body);
     try {
         const response = await fetch(`${root}/appointments`, options)
         const data = await response.json()

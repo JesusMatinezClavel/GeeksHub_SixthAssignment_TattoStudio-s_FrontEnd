@@ -80,14 +80,14 @@ export const Services = () => {
             <div className="servicesDesign">
                 {services.map((services, index) => (
                     < CText key={index} className={`textDesignServices ${index % 2 === 0 ? "right" : "reverse"}`} >
-                        <div className="serviceImg"></div>
+                        <div className={`serviceImg${index}`}></div>
                         <div className="servicesText">
                             <div className="serviceName">{services.serviceName}</div>
                             <div className="descriptoin">{services.description}</div>
                             {
                                 tokenData
                                     ? (
-                                        <CButton title={"New appointment"} onClick={() => createAppointment(index)} />
+                                        <CButton className={"buttonNewAppointment"} title={"New appointment"} onClick={() => createAppointment(index)} />
                                     ) : (
                                         <CButton className={"offButton"} title={"New appointment"} />
                                     )}
