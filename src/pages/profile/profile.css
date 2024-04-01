@@ -20,10 +20,6 @@
     display: block;
   }
 
-  .profileTextBox p{
-    margin-left: -1.2em;
-  }
-
   .updateError{
     height: 2em;
     width: 7em;
@@ -51,3 +47,10 @@
         cursor: pointer;
     }
   }
+
+  .errorMsg {
+    height: .5em;
+    color: rgb(168, 168, 168);
+    letter-spacing: .3em;
+    font-weight: 400;
+}

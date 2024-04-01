@@ -30,6 +30,11 @@
 .noneSelected {
     height: 75vh;
     width: 80%;
+
+    letter-spacing: 1.1em;
+    font-size: 1.4em;
+    font-weight: 400;
+    
     display: flex;
     justify-content: center;
     align-items: center;

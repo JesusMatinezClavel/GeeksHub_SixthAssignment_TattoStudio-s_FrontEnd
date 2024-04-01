@@ -84,3 +84,8 @@
     height: 20em;
     width:20em;
 }
+
+.textDesignProfile{
+    width: 10em;
+    letter-spacing: .2em;
+}

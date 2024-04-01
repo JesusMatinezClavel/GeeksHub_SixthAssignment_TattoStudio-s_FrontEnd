@@ -153,19 +153,19 @@ export const Profile = () => {
                 {editable === false
                     ? (
                         <CCard className="cardDesign">
-                            <img src="../../../img\userImg.png" alt="" />
+                            <img src="../../../img\profile/userImg.png" alt="" />
                             <div className="profileTextBox">
                                 first name
-                                <CText className={"textDesign"}>{profileData.firstName}</CText>
+                                <CText className={"textDesignProfile"}>{profileData.firstName}</CText>
                                 last name
-                                <CText className={"textDesign"}>{profileData.lastName}</CText>
+                                <CText className={"textDesignProfile"}>{profileData.lastName}</CText>
                                 email
-                                <CText className={"textDesign"}>{profileData.email}</CText>
+                                <CText className={"textDesignProfile"}>{profileData.email}</CText>
                             </div>
                         </CCard>
                     ) : (
                         <CCard className="cardUpdate">
-                            <img src="../../../img\userImg.png" alt="" />
+                            <img src="../../../img\profile/userImg.png" alt="" />
                             <div className="profileTextBox">
                                 <p>edit profile</p>
                                 <CInput
