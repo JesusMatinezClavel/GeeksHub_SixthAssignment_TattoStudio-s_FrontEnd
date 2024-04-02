@@ -1,5 +1,6 @@
 import './home.css'
 import { Header } from "../../common/header/header";
+import homePicture from "../../../img/home/homePicture.png"
 
 export const Home = () => {
     return (
@@ -12,7 +13,7 @@ export const Home = () => {
                         Explore a canvas of creativity as our skilled artisans translate your visions into timeless masterpieces. Dare to embrace your story, etched in ink, and embark on a journey of self-expression at our tattoo sanctuary</div>
                 </div>
                 <div className="homeImg">
-                    <img src="../../../img\home\homePicture.png" alt='home picture'/>
+                    <img src={homePicture} alt='home picture' />
                 </div>
             </div>
             <div className="homeStyles">
