@@ -1,15 +1,15 @@
 import './home.css'
 import { Header } from "../../common/header/header";
-import homePicture from "../../../img\home\homePicture.png"
-import style01 from "../../../img\home\homeStyles\traditionalStyle.png"
-import style02 from "../../../img\home\homeStyles\neotradicionalStyle.png"
-import style03 from "../../../img\home\homeStyles\newSchoolStyle.png"
-import style04 from "../../../img\home\homeStyles\blackworkStyle.png"
-import style05 from "../../../img\home\homeStyles\realismStyle.png"
-import style06 from "../../../img\home\homeStyles\dotworkStyle.png"
-import style07 from "../../../img\home\homeStyles\biomechanicStyle.png"
-import style08 from "../../../img\home\homeStyles\orientalStyle.png"
-import style09 from "../../../img\home\homeStyles\letteringStyle.png"
+import homePicture from "../../../img/home/homePicture.png"
+import style01 from "../../../img/home/homeStyles/traditionalStyle.png"
+import style02 from "../../../img/home/homeStyles/neotradicionalStyle.png"
+import style03 from "../../../img/home/homeStyles/newSchoolStyle.png"
+import style04 from "../../../img/home/homeStyles/blackworkStyle.png"
+import style05 from "../../../img/home/homeStyles/realismStyle.png"
+import style06 from "../../../img/home/homeStyles/dotworkStyle.png"
+import style07 from "../../../img/home/homeStyles/biomechanicStyle.png"
+import style08 from "../../../img/home/homeStyles/orientalStyle.png"
+import style09 from "../../../img/home/homeStyles/letteringStyle.png"
 
 
 export const Home = () => {
