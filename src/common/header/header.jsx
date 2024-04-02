@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import './header.css'
 import { Navigator } from "../navigator/navigator";
+import profileImg from "../../../img/profile/userImg.png"
 
 export const Header = () => {
 
@@ -41,7 +42,7 @@ export const Header = () => {
                         <div className="headerRest">
                             <Navigator title={"Services"} destination="/services" />
                             <div className="userDeployable">
-                                <img src="../../../img\profile/userImg.png" alt="userProfile Default Image" onClick={() => click()} />
+                                <img src={profileImg} alt="userProfile Default Image" onClick={() => click()} />
                                 <div className={`${userDeploy ? "userOptions" : "userOptionshidden"}`}>
                                     <div className="optionsProfile">
                                         <Navigator className={"optionsLink"} title={"SuperAdmin"} destination="/superadmin" />
@@ -59,7 +60,7 @@ export const Header = () => {
                         <div className="headerRest">
                             <Navigator title={"Services"} destination="/services" />
                             <div className="userDeployable">
-                                <img src="../../../img\profile/userImg.png" alt="userProfile Default Image" onClick={() => click()} />
+                                <img src={profileImg} alt="userProfile Default Image" onClick={() => click()} />
                                 <div className={`${userDeploy ? "userOptions" : "userOptionshidden"}`}>
                                     <div className="optionsProfile">
                                         <Navigator className={"optionsLink"} title={"Profile"} destination="/users/profile" />

@@ -9,6 +9,8 @@ import { Header } from "../../common/header/header";
 import { CButton } from "../../common/c-button/cButton";
 import { CCard } from '../../common/c-card/cCard';
 import { CText } from "../../common/c-text/cText";
+import profileImg from "../../../img/profile/userImg.png"
+
 
 export const Profile = () => {
 
@@ -153,7 +155,7 @@ export const Profile = () => {
                 {editable === false
                     ? (
                         <CCard className="cardDesign">
-                            <img src="../../../img\profile/userImg.png" alt="" />
+                            <img src={profileImg} alt="profile img" />
                             <div className="profileTextBox">
                                 first name
                                 <CText className={"textDesignProfile"}>{profileData.firstName}</CText>
@@ -165,7 +167,7 @@ export const Profile = () => {
                         </CCard>
                     ) : (
                         <CCard className="cardUpdate">
-                            <img src="../../../img\profile/userImg.png" alt="" />
+                            <img src={profileImg} alt="profile img" />
                             <div className="profileTextBox">
                                 <p>edit profile</p>
                                 <CInput
