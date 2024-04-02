@@ -2,6 +2,8 @@
 
 ![Tattoo_Studio](./img/home/homePicture.png)
 
+![WebSite]()
+
 <details>
   <summary>Content 📝</summary>
   <ol>
@@ -120,5 +122,6 @@ You can do it both ways:
 ## Contact📧
 <a href = "mailto:jmcvalles@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 <a href="https://www.linkedin.com/in/jes%C3%BAs-mart%C3%ADnez-clavel-vall%C3%A9s-913294108?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtQmk%2FVrTShiKcofYcK6uYg%3D%3D" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://github.com/JesusMatinezClavel" target="_blank">    <img src= "https://img.shields.io/badge/github-22809F?style=for-the-badge&logo=github&logoColor=white"/></a> 
 </p>
 
