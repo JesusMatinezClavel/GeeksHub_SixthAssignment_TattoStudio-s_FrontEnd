@@ -12,7 +12,7 @@ export const Home = () => {
                         Explore a canvas of creativity as our skilled artisans translate your visions into timeless masterpieces. Dare to embrace your story, etched in ink, and embark on a journey of self-expression at our tattoo sanctuary</div>
                 </div>
                 <div className="homeImg">
-                    <img src="../../../img/home/homePicture.jpg"/>
+                    <img src="../../../img/home/homePicture.png"/>
                 </div>
             </div>
             <div className="homeStyles">
