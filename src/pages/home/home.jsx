@@ -1,6 +1,6 @@
 import './home.css'
 import { Header } from "../../common/header/header";
-import homePicture from "../../../img/home/homePicture.png"
+import homePicture from "../../../img\home\homePicture.png"
 import style01 from "../../../img\home\homeStyles\traditionalStyle.png"
 import style02 from "../../../img\home\homeStyles\neotradicionalStyle.png"
 import style03 from "../../../img\home\homeStyles\newSchoolStyle.png"
