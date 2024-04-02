@@ -2,8 +2,6 @@
 
 ![Tattoo_Studio](./img/home/homePicture.png)
 
-![WebSite]()
-
 <details>
   <summary>Content 📝</summary>
   <ol>
@@ -55,6 +53,13 @@ This aplication has been created as an assignment for the GeeksHub's FullStackDe
 3. Run the website:
 
    ` $ npm run dev `
+
+## Deployment
+<div align="center">
+
+[Tattoo Studio's Deployment](https://master.danywws95pvcr.amplifyapp.com/)
+
+ </div>
 
 
 ## Views 👁
